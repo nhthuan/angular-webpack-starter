@@ -1,0 +1,2 @@
+https://v4.angular.io/guide/webpack
+try to upgrade to webpack 3
