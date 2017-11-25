@@ -36,12 +36,14 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        //Adding the chain of to-string-loader and css-loader to solve Expected 'styles' to be an array of strings
+        use: [ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' }), 'to-string-loader', 'css-loader']
       },
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+         loader: 'raw-loader'
+        // use: ['to-string-loader','css-loader?sourceMap']
       }
     ]
   },

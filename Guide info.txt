@@ -1,2 +1,13 @@
 https://v4.angular.io/guide/webpack
 try to upgrade to webpack 3
+
+
+#Notes:
+- Cannot use material 5x with angular 4 because materia 5x require @angular/common/http what is availale on angular 5
+
+#Loaders knowledge
+style-loader is to inject the <style></style> and in html page.
+
+css-loader is uses for extract css file which is being used in another file, for example.
+abc.css has imported another css file inside it like.
+@import 'xyz.css';
